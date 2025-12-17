@@ -35,6 +35,8 @@ def index():
 
 @app.route('/convert', methods=['POST'])
 def convert():
+    clean_old_files()
+    
     data = request.get_json()
     url = data.get('url', '').strip()
     
